@@ -1,0 +1,17 @@
+{
+  "name": "ecoscore",
+  "version": "0.1.0",
+  "description": "Environmental impact analysis plugin for sustainable software development based on Green IT principles",
+  "author": {
+    "name": "Vincent Delaleu"
+  },
+  "keywords": [
+    "green-it",
+    "sustainability",
+    "carbon-aware",
+    "environmental-impact",
+    "performance",
+    "analysis"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "EcoScore environmental impact warnings for code changes (warn-only, never blocks)",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Quickly check the code being written/edited for high-impact environmental anti-patterns. Look for:\n\n1. **Heavy dependencies**: Adding moment.js, lodash (full import), large UI frameworks\n2. **AI inefficiency**: Hardcoding 'claude-opus', 'gpt-4' for simple tasks without justification\n3. **Database issues**: SELECT * patterns, missing LIMIT on queries\n4. **Resource waste**: Loading entire files/datasets when only parts needed\n5. **Missing optimizations**: Images without lazy loading, uncompressed large payloads\n\nIMPORTANT: This is warn-only. ALWAYS return 'allow' for permissionDecision.\n\nIf you find issues, include a brief warning in systemMessage (1-2 sentences max).\nIf no issues found, return empty systemMessage.\n\nRespond with JSON:\n{\n  \"hookSpecificOutput\": {\n    \"permissionDecision\": \"allow\"\n  },\n  \"systemMessage\": \"[Brief warning if issues found, empty string otherwise]\"\n}",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
