@@ -30,7 +30,7 @@ Install plugins from this marketplace using the Claude Code CLI:
 
 ```bash
 # Install a specific plugin
-claude /plugin https://github.com/anthropics/claude-code-plugins ecoscore
+claude /plugin https://github.com/argile-agency/claude-code-plugins ecoscore
 
 # Or install from local path
 claude /plugin /path/to/claude-code-plugins ecoscore
