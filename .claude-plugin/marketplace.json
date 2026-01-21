@@ -1,43 +1,52 @@
- {                                                                                        
-   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",                
-   "name": "argile-skills",                                                               
-   "description": "Premium Claude Code skills for professional workflows",                
-   "owner": {                                                                             
-     "name": "Argile Agency",                                                             
-     "email": "aloha@argile.agency"                                                       
-   },                                                                                     
-   "plugins": [                                                                           
-     {                                                                                    
-       "name": "ecoscore",                                                                
-       "description": "Environmental impact analysis for sustainable software development 
-  based on Green IT principles",                                                          
-       "version": "0.1.0",                                                                
-       "author": {                                                                        
-         "name": "Argile Agency",                                                         
-         "email": "aloha@argile.agency"                                                   
-       },                                                                                 
-       "source": "./plugins/ecoscore",                                                    
-       "category": "analysis",                                                            
-       "tags": ["green-it", "sustainability", "carbon-aware", "environmental-impact",     
- "performance"],                                                                          
-       "homepage":                                                                        
- "https://github.com/argile-agency/claude-code-plugins/tree/main/plugins/ecoscore"        
-     },                                                                                   
-     {                                                                                    
-       "name": "comply",                                                                  
-       "description": "GDPR and CSRD compliance automation for European SaaS - scan for   
- data protection violations and generate sustainability reports",                         
-       "version": "0.1.0",                                                                
-       "author": {                                                                        
-         "name": "Argile Agency",                                                         
-         "email": "aloha@argile.agency"                                                   
-       },                                                                                 
-       "source": "./plugins/comply",                                                      
-       "category": "compliance",                                                          
-       "tags": ["gdpr", "compliance", "csrd", "privacy", "data-protection",               
- "sustainability", "esrs", "eu-regulations"],                                             
-       "homepage":                                                                        
- "https://github.com/argile-agency/claude-code-plugins/tree/main/plugins/comply"          
-     }                                                                                    
-   ]                                                                                      
- }  
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "argile-skills",
+  "description": "Premium Claude Code skills for professional workflows",
+  "owner": {
+    "name": "Argile Agency",
+    "email": "aloha@argile.agency"
+  },
+  "plugins": [
+    {
+      "name": "ecoscore",
+      "description": "Environmental impact analysis for sustainable software development based on Green IT principles",
+      "version": "0.1.0",
+      "author": {
+        "name": "Argile Agency",
+        "email": "aloha@argile.agency"
+      },
+      "source": "./plugins/ecoscore",
+      "category": "analysis",
+      "tags": [
+        "green-it",
+        "sustainability",
+        "carbon-aware",
+        "environmental-impact",
+        "performance"
+      ],
+      "homepage": "https://github.com/argile-agency/claude-code-plugins/tree/main/plugins/ecoscore"
+    },
+    {
+      "name": "comply",
+      "description": "GDPR and CSRD compliance automation for European SaaS - scan for data protection violations and generate sustainability reports",
+      "version": "0.1.0",
+      "author": {
+        "name": "Argile Agency",
+        "email": "aloha@argile.agency"
+      },
+      "source": "./plugins/comply",
+      "category": "compliance",
+      "tags": [
+        "gdpr",
+        "compliance",
+        "csrd",
+        "privacy",
+        "data-protection",
+        "sustainability",
+        "esrs",
+        "eu-regulations"
+      ],
+      "homepage": "https://github.com/argile-agency/claude-code-plugins/tree/main/plugins/comply"
+    }
+  ]
+}
