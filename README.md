@@ -24,6 +24,22 @@ Environmental impact analysis for sustainable software development based on Gree
 - `ecoscore-analyzer` - Deep environmental impact analysis
 - `green-advisor` - Reviews changes before commit
 
+### comply
+
+GDPR and CSRD compliance automation for European SaaS applications.
+
+**Features:**
+- PII detection and data flow mapping
+- GDPR violation scanning (consent, retention, cross-border transfers)
+- CSRD/ESRS sustainability reporting guidance
+- Automated compliance checklists and remediation suggestions
+
+**Commands:**
+- `/comply:scan` - Scan codebase for compliance issues
+
+**Agents:**
+- `gdpr-analyzer` - Deep GDPR compliance analysis
+
 ## Installation
 
 Install plugins from this marketplace using the Claude Code CLI:
@@ -43,7 +59,13 @@ claude-code-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json    # Marketplace configuration
 ├── plugins/
-│   └── ecoscore/           # EcoScore plugin
+│   ├── ecoscore/           # EcoScore plugin
+│   │   ├── .claude-plugin/
+│   │   ├── commands/
+│   │   ├── agents/
+│   │   ├── hooks/
+│   │   └── skills/
+│   └── comply/             # Comply plugin
 │       ├── .claude-plugin/
 │       ├── commands/
 │       ├── agents/
