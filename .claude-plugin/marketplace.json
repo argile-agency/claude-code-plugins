@@ -17,6 +17,14 @@
       "version": "0.1.0",
       "category": "analysis",
       "tags": ["green-it", "sustainability", "carbon-aware", "environmental-impact", "performance"]
+    },
+    {
+      "name": "comply",
+      "path": "plugins/comply",
+      "description": "GDPR and CSRD compliance automation for European SaaS - scan for data protection violations and generate sustainability reports",
+      "version": "0.1.0",
+      "category": "compliance",
+      "tags": ["gdpr", "compliance", "csrd", "privacy", "data-protection", "sustainability", "esrs", "eu-regulations"]
     }
   ]
 }

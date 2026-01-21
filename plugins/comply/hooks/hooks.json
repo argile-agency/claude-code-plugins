@@ -1,0 +1,17 @@
+{
+  "description": "Comply pre-commit warnings for GDPR violations and compliance issues (warn-only, never blocks)",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Quickly check code being written/edited for compliance issues:\n\n**GDPR Violations:**\n1. **PII in logs**: Logging email, name, phone, SSN, or other personal data\n2. **Hardcoded secrets**: API keys, passwords, tokens, credentials\n3. **Unencrypted sensitive data**: Storing passwords/credit cards in plaintext\n4. **Missing consent**: Collecting personal data without consent tracking\n5. **Cross-border transfers**: API calls to non-EU services without safeguards\n\n**Sustainability Issues:**\n1. **Heavy dependencies**: Adding moment.js, lodash (full), large packages\n2. **Inefficient patterns**: O(n²) algorithms, unnecessary loops\n3. **High-carbon infrastructure**: us-east-1, ap-south-1 regions\n\n**IMPORTANT:** This is warn-only. ALWAYS return 'allow' for permissionDecision.\n\nIf compliance issues found:\n- Include brief warning in systemMessage (1-2 sentences max)\n- Reference GDPR article if applicable\n- Suggest quick fix\n\nIf no issues:\n- Return empty systemMessage\n\nRespond with JSON:\n{\n  \"hookSpecificOutput\": {\n    \"permissionDecision\": \"allow\"\n  },\n  \"systemMessage\": \"[Brief warning if issues found, empty string otherwise]\"\n}\n\nExample warnings:\n- \"⚠️ Logging user email on line X violates GDPR Art. 5(1)(f). Log user ID instead.\"\n- \"⚠️ Hardcoded API key detected. Use environment variables.\"\n- \"⚠️ Adding moment.js (300KB). Consider date-fns (13KB) for lower carbon footprint.\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

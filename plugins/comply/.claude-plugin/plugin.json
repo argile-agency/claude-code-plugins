@@ -1,0 +1,21 @@
+{
+  "name": "comply",
+  "version": "0.1.0",
+  "description": "GDPR and CSRD compliance automation plugin for European SaaS companies - scan for data protection violations and generate sustainability reports",
+  "author": {
+    "name": "Argile Agency",
+    "email": "aloha@argile.agency"
+  },
+  "keywords": [
+    "gdpr",
+    "compliance",
+    "csrd",
+    "privacy",
+    "data-protection",
+    "sustainability",
+    "esrs",
+    "eu-regulations",
+    "audit"
+  ],
+  "license": "MIT"
+}
