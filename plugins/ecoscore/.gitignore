@@ -1,6 +1,9 @@
 # Local configuration files
 .claude/*.local.md
 
+# Session state - excluded to avoid committing usage data
+.ecoscore/
+
 # OS files
 .DS_Store
 Thumbs.db
