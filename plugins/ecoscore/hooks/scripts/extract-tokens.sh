@@ -20,25 +20,36 @@ if [[ ! -f "$TRANSCRIPT_PATH" ]] || [[ ! -r "$TRANSCRIPT_PATH" ]]; then
     exit 0
 fi
 
-# Parse transcript with jq
-# - Filter for message events with usage data
-# - Extract input_tokens, output_tokens, and model
-# - Sum tokens and get last model used
-RESULT=$(jq -r --slurp '
-  map(select(.type == "message" and .usage != null)) |
-  if length == 0 then
-    "0 0 unknown"
-  else
-    {
-      input_tokens: (map(.usage.input_tokens // 0) | add),
-      output_tokens: (map(.usage.output_tokens // 0) | add),
-      model: (map(.model // "unknown") | last)
-    } |
-    "\(.input_tokens) \(.output_tokens) \(.model)"
-  end
+# Parse transcript with Python (more universally available than jq on Windows)
+RESULT=$(python3 -c '
+import json
+import sys
+
+transcript_path = sys.argv[1]
+input_tokens = 0
+output_tokens = 0
+model = "unknown"
+
+try:
+    with open(transcript_path, "r") as f:
+        for line in f:
+            try:
+                data = json.loads(line.strip())
+                if data.get("type") == "message" and data.get("usage"):
+                    usage = data["usage"]
+                    input_tokens += usage.get("input_tokens", 0)
+                    output_tokens += usage.get("output_tokens", 0)
+                    if "model" in data:
+                        model = data["model"]
+            except json.JSONDecodeError:
+                continue
+
+    print(f"{input_tokens} {output_tokens} {model}")
+except Exception:
+    print("0 0 unknown")
 ' "$TRANSCRIPT_PATH" 2>/dev/null)
 
-# If jq fails or returns empty, output zeros
+# Output result or fallback to zeros
 if [[ -z "$RESULT" ]]; then
     echo "0 0 unknown"
 else
