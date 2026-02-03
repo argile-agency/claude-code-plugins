@@ -77,7 +77,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CARB-01 | Phase 1 | Pending |
 | CARB-02 | Phase 1 | Pending |
 | CARB-03 | Phase 1 | Pending |
-| CARB-04 | Phase 2 | Pending |
+| CARB-04 | Phase 1 | Pending |
 | VIS-01 | Phase 2 | Pending |
 | VIS-02 | Phase 2 | Pending |
 | VIS-03 | Phase 2 | Pending |
@@ -93,4 +93,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-03*
-*Last updated: 2026-02-03 after initial definition*
+*Last updated: 2026-02-03 after roadmap creation*
